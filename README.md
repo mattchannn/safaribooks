@@ -169,7 +169,26 @@ In this case, I suggest you to convert the `EPUB` to `AZW3` with Calibre or to `
     On the right, the book created with `--kindle` option, on the left without (default):  
     
     ![NoKindle Option](https://github.com/lorenzodifuccia/cloudflare/raw/master/Images/safaribooks/safaribooks_example02_NoKindle.png "Version compare")  
-    
+
+
+## Common Error
+
+### Log in hang using `--cred` option
+
+For this issue, we can manually add `cookie.json` setup as workaround
+
+If `python3 safaribooks.py --cred "xx:xx" XXXXX` hangs over there. 
+There is a quick way to bypass the problem temporarily by manually configure cookies.json file by export cookies from Chrome browser.
+
+Steps:
+
+1. Create cookies.json
+2. Make sure you have [ExportThisCookie](https://chrome.google.com/webstore/detail/exportthiscookie/dannllckdimllhkiplchkcaoheibealk) installed on your Chrome browser
+3. Login your safaribooks page on your Chrome browser
+4. Use _ExportThisCookie_ extension to download the `cookies.txt` file
+5. Copy content of `cookies.txt` into cookies.json (everything in `{}` include `{}` iteslf)
+6. Try download your file again without using `--cred "xx:xx"`
+
 ---  
   
 ## Thanks!!
